@@ -5,3 +5,4 @@ plugins:
     default: 5
   discourse_backups_to_drive_api_key:
     default: ''
+

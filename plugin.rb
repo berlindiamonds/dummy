@@ -19,7 +19,10 @@ after_initialize do
 
 	Backup.class_eval do
 		def after_create_hook
+			puts "==============================="
 			Jobs.enqueue(:sync_backups_to_drive)
+			puts "job created"
 		end
 	end
 end
+

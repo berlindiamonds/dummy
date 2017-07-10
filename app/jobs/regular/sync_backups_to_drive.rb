@@ -2,7 +2,7 @@ require 'google_drive'
 require 'sidekiq'
 module Jobs 
 
-	class SyncBackupToDrive < Jobs::Base
+	class SyncBackupsToDrive < Jobs::Base
 
 		sidekiq_options queue: 'low'
 
