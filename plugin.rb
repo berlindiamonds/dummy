@@ -3,10 +3,14 @@
 # version: 0.0.1
 # authors: kaja
 
-require "google_drive"
+require 'google_drive'
+require 'sidekiq'
 
 
 enabled_site_setting :details_enabled
+
+require 'google_drive'
+
 
 after_initialize do 
 

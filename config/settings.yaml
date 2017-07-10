@@ -1,7 +1,7 @@
 plugins:
-  awesomeness_enabled:
-    default: true
-    client: true
-  awesomeness_max_volume:
-    default: 10
-    client: true
+  discourse_backups_to_drive_enabled:
+    default: false
+  discourse_backups_to_drive_quantity:
+    default: 5
+  discourse_backups_to_drive_api_key:
+    default: ''

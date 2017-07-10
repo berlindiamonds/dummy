@@ -1,7 +1,13 @@
+require 'google_drive'
+require 'sidekiq'
 module Jobs 
+
 	class CreateBackup < Jobs::Base
+
+		sidekiq_options queue: 'low'
+
 		def execute(args)
-	      BackupRestore.backup!(Discourse.system_user.id, publish_to_message_bus: false, with_uploads: SiteSetting.backup_with_uploads)
+      		::DiscourseBackupToDrive::DriveSynchronizer.sync if SiteSetting.discourse_backups_to_drive_enabled
 	    end
 	end
 end
