@@ -1,8 +1,11 @@
+require "google_drive"
+
+
 module DiscourseBackupToDrive
 	class DriveSynchronizer
 
 		def self.sync
-			session = GoogleDrive::Session.from_config("client_secret.json")
+			session = GoogleDrive::Session.from_config("../../../../google-drive-gem/client_secret.json")
 
 			file = session.upload_from_file(selection, file_name, convert: false)
 			folder_name = Time.new
